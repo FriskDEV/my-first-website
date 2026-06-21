@@ -1,220 +1,343 @@
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body, .page {
-  font-family: 'Press Start 2P', monospace;
-  background: #0d0d1a;
-  color: white;
-  overflow-x: hidden;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HackFanGames</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* reset basico que vi en youtube */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 40px 20px;
-  border-bottom: 4px solid yellow;
-}
-.hero h1 {
-  font-size: 24px;
-  color: yellow;
-  margin-bottom: 20px;
-}
-.hero p {
-  font-size: 9px;
-  color: #aaa;
-  margin-bottom: 20px;
-  line-height: 2;
-}
-.hero button {
-  background: yellow;
-  color: black;
-  border: none;
-  padding: 12px 20px;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 10px;
-  cursor: pointer;
-  box-shadow: 4px 4px 0 #888;
-}
-.hero button:active { box-shadow: none; transform: translate(4px,4px); }
+    body {
+      background: #0d0d1a;
+      color: white;
+      font-family: 'Press Start 2P', monospace;
+      overflow-x: hidden;
+    }
 
-/* STEPS */
-.steps { padding: 30px 20px; }
-.steps h2 { color: yellow; font-size: 12px; text-align: center; margin-bottom: 20px; }
-.steps-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
-.step {
-  border: 3px solid cyan;
-  padding: 15px;
-  text-align: center;
-}
-.step p:first-child { color: #ff6b9d; font-size: 8px; margin-bottom: 8px; }
-.step p:nth-child(2) { font-size: 9px; margin-bottom: 8px; }
-.step p:last-child { font-size: 7px; color: #aaa; line-height: 2; }
+    /* parte de arriba con el titulo */
+    .encabezado {
+      text-align: center;
+      padding: 38px 20px 35px 20px;
+      border-bottom: 4px solid yellow;
+    }
 
-/* SHOP */
-.shop { padding: 30px 0; border-top: 4px solid yellow; }
-.shop h2 { color: yellow; font-size: 12px; text-align: center; margin-bottom: 20px; }
-.shop-track-wrap { overflow: hidden; }
-.shop-track {
-  display: flex;
-  gap: 10px;
-  animation: scroll 20s linear infinite;
-  width: max-content;
-}
-.shop-track:hover { animation-play-state: paused; }
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-.item {
-  border: 3px solid yellow;
-  padding: 15px 10px;
-  text-align: center;
-  width: 130px;
-  flex-shrink: 0;
-}
-.item span { font-size: 30px; display: block; margin-bottom: 8px; }
-.item p { font-size: 7px; line-height: 2; }
-.item small { font-size: 7px; color: cyan; }
-.shop-btn { text-align: center; margin-top: 20px; }
-.shop-btn button {
-  background: yellow;
-  color: black;
-  border: none;
-  padding: 12px 20px;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 9px;
-  cursor: pointer;
-  box-shadow: 4px 4px 0 #888;
-}
+    .encabezado h1 {
+      font-size: 23px;
+      color: yellow;
+      margin-bottom: 18px;
+      text-shadow: 4px 4px 0px #9a7d00;
+    }
 
-/* FAQ */
-.faq { padding: 30px 20px; border-top: 4px solid yellow; }
-.faq h2 { color: yellow; font-size: 12px; margin-bottom: 20px; text-align: center; }
-.faq-item { border-bottom: 2px solid #333; }
-.faq-item button {
-  width: 100%;
-  background: none;
-  border: none;
-  color: white;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 8px;
-  padding: 14px 0;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  line-height: 1.8;
-}
-.faq-item button:hover { color: yellow; }
-.faq-item p { font-size: 7px; color: #aaa; line-height: 2; max-height: 0; overflow: hidden; transition: max-height 0.3s, padding 0.3s; }
-.faq-item p.open { max-height: 150px; padding-bottom: 14px; }
+    .encabezado h1 span { color: #ff6b9d; }
 
-/* STATS */
-.stats { padding: 30px 20px; background: #111128; border-top: 4px solid yellow; }
-.stats h2 { color: yellow; font-size: 12px; text-align: center; margin-bottom: 20px; }
-.stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
-.stat { border: 3px solid yellow; padding: 20px 10px; text-align: center; }
-.stat p:first-child { font-size: 24px; color: yellow; margin-bottom: 8px; }
-.stat p:last-child { font-size: 7px; color: #aaa; line-height: 2; }
-</style>
+    .encabezado p {
+      font-size: 8px;
+      color: #aaaaaa;
+      line-height: 2.1;
+      margin-bottom: 22px;
+    }
 
-<div class="page">
+    .btn-enviar {
+      background: yellow;
+      color: black;
+      border: none;
+      padding: 11px 22px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 9px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 #777;
+    }
+    .btn-enviar:hover { opacity: 0.88; }
 
-  <div class="hero">
-    <h1>FanGame Hub</h1>
-    <p>Haz un fan game de tu juego favorito<br>y gana premios reales!</p>
-    <button>► SUBMIT!</button>
+    .juegos-lista {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+    }
+    .juegos-lista span {
+      border: 2px solid cyan;
+      color: cyan;
+      font-size: 6px;
+      padding: 5px 9px;
+    }
+
+    .como-funciona { padding: 28px 20px 22px; }
+
+    .como-funciona h2 {
+      color: yellow;
+      font-size: 11px;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .cajitas {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 11px;
+    }
+
+    .cajita-paso {
+      border: 3px solid cyan;
+      padding: 13px 10px;
+      text-align: center;
+      background: #111128;
+    }
+
+    .cajita-paso .numero { color: #ff6b9d; font-size: 7px; margin-bottom: 7px; }
+    .cajita-paso .titulo-paso { font-size: 8px; margin-bottom: 7px; line-height: 1.7; }
+    .cajita-paso .desc-paso { font-size: 6px; color: #999; line-height: 2.1; }
+
+    .seccion-shop {
+      padding-top: 28px;
+      padding-bottom: 13px;
+      border-top: 4px solid yellow;
+    }
+
+    .seccion-shop h2 {
+      color: yellow;
+      font-size: 11px;
+      text-align: center;
+      margin-bottom: 17px;
+    }
+
+    .contenedor-scroll { overflow: hidden; }
+
+    .track-shop {
+      display: flex;
+      gap: 11px;
+      width: max-content;
+      animation: mover 22s linear infinite;
+    }
+
+    .track-shop:hover { animation-play-state: paused; }
+
+    @keyframes mover {
+      from { transform: translateX(0px); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .tarjeta-item {
+      width: 128px;
+      border: 3px solid yellow;
+      background: #111128;
+      padding: 14px 9px;
+      text-align: center;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .tarjeta-item:hover { border-color: #ff6b9d; }
+
+    .tarjeta-item .emoji-item { font-size: 29px; display: block; margin-bottom: 9px; }
+    .tarjeta-item .nombre-item { font-size: 6px; line-height: 2; margin-bottom: 5px; }
+    .tarjeta-item .costo-item { font-size: 6px; color: cyan; }
+
+    .boton-shop-wrap { text-align: center; margin-top: 17px; }
+    .boton-shop-wrap button {
+      background: yellow;
+      color: black;
+      border: none;
+      padding: 11px 19px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 #777;
+    }
+
+    .que-es {
+      padding: 27px 20px;
+      border-top: 3px solid yellow;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+    .que-es h2 { color: #ff6b9d; font-size: 10px; margin-bottom: 13px; line-height: 1.7; }
+    .que-es p { font-size: 7px; color: #bbb; line-height: 2.3; }
+
+    .img-undertale { border: 3px solid cyan; overflow: hidden; }
+    .img-undertale img { width: 100%; display: block; }
+    .img-undertale small { display: block; padding: 6px 9px; font-size: 6px; color: cyan; background: #111128; }
+
+    .preguntas { padding: 27px 20px; border-top: 3px solid yellow; }
+    .preguntas h2 { color: yellow; font-size: 11px; text-align: center; margin-bottom: 17px; }
+
+    .pregunta-item { border-bottom: 2px solid #222; }
+    .pregunta-item button {
+      width: 100%;
+      background: none;
+      border: none;
+      color: white;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      padding: 13px 0;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      line-height: 1.9;
+      gap: 8px;
+    }
+    .pregunta-item button:hover { color: yellow; }
+    .pregunta-item p {
+      font-size: 6px;
+      color: #999;
+      line-height: 2.2;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s, padding 0.3s;
+    }
+    .pregunta-item p.abierto { max-height: 150px; padding-bottom: 13px; }
+
+    .numeritos {
+      padding: 27px 20px 40px;
+      background: #111128;
+      border-top: 4px solid yellow;
+    }
+    .numeritos h2 { color: yellow; font-size: 11px; text-align: center; margin-bottom: 17px; }
+    .grid-nums {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 9px;
+    }
+    .num-card {
+      border: 3px solid yellow;
+      padding: 19px 8px;
+      text-align: center;
+      background: #0d0d1a;
+    }
+    .num-card .numero-grande { font-size: 21px; color: yellow; margin-bottom: 7px; }
+    .num-card .etiqueta { font-size: 6px; color: #aaa; line-height: 2; }
+  </style>
+</head>
+<body>
+
+  <div class="encabezado">
+    <h1>Hack<span>Fan</span>Games</h1>
+    <p>Haz un fan game de tu juego favorito<br>y gana premios reales!!</p>
+    <button class="btn-enviar">► SUBMIT!</button>
+    <div class="juegos-lista">
+      <span>UNDERTALE</span>
+      <span>DELTARUNE</span>
+      <span>SONIC</span>
+      <span>CELESTE</span>
+      <span>MINECRAFT</span>
+    </div>
   </div>
 
-  <div class="steps">
+  <div class="como-funciona">
     <h2>COMO FUNCIONA</h2>
-    <div class="steps-grid">
-      <div class="step">
-        <p>PASO 1</p>
-        <p>Elige tu juego</p>
-        <p>Escoge el juego que te inspira</p>
+    <div class="cajitas">
+      <div class="cajita-paso">
+        <p class="numero">PASO 1</p>
+        <p class="titulo-paso">Elige tu juego</p>
+        <p class="desc-paso">Escoge el juego que te inspira</p>
       </div>
-      <div class="step">
-        <p>PASO 2</p>
-        <p>Sube tu proyecto</p>
-        <p>Manda el link de tu fan game</p>
+      <div class="cajita-paso">
+        <p class="numero">PASO 2</p>
+        <p class="titulo-paso">Sube tu proyecto</p>
+        <p class="desc-paso">Manda el link de tu fan game</p>
       </div>
-      <div class="step">
-        <p>PASO 3</p>
-        <p>Gana premios</p>
-        <p>Los mejores ganan recompensas</p>
+      <div class="cajita-paso">
+        <p class="numero">PASO 3</p>
+        <p class="titulo-paso">Gana premios</p>
+        <p class="desc-paso">Los mejores ganan recompensas</p>
       </div>
     </div>
   </div>
 
-  <div class="shop">
+  <div class="seccion-shop">
     <h2>THE SHOP</h2>
-    <div class="shop-track-wrap">
-      <div class="shop-track">
-        <div class="item"><span>🎧</span><p>AURICULARES</p><small>~10 pts</small></div>
-        <div class="item"><span>🖱️</span><p>MOUSE GAMER</p><small>~8 pts</small></div>
-        <div class="item"><span>💳</span><p>STEAM CARD</p><small>~6 pts</small></div>
-        <div class="item"><span>🤖</span><p>AI CREDITS</p><small>~2 pts</small></div>
-        <div class="item"><span>⌨️</span><p>TECLADO</p><small>~12 pts</small></div>
-        <div class="item"><span>☕</span><p>CAFE+SNACKS</p><small>~1 pt</small></div>
-        <div class="item"><span>🎮</span><p>MINECRAFT</p><small>~7 pts</small></div>
-        <div class="item"><span>📦</span><p>MERCH PACK</p><small>~5 pts</small></div>
-        <!-- duplicado -->
-        <div class="item"><span>🎧</span><p>AURICULARES</p><small>~10 pts</small></div>
-        <div class="item"><span>🖱️</span><p>MOUSE GAMER</p><small>~8 pts</small></div>
-        <div class="item"><span>💳</span><p>STEAM CARD</p><small>~6 pts</small></div>
-        <div class="item"><span>🤖</span><p>AI CREDITS</p><small>~2 pts</small></div>
-        <div class="item"><span>⌨️</span><p>TECLADO</p><small>~12 pts</small></div>
-        <div class="item"><span>☕</span><p>CAFE+SNACKS</p><small>~1 pt</small></div>
-        <div class="item"><span>🎮</span><p>MINECRAFT</p><small>~7 pts</small></div>
-        <div class="item"><span>📦</span><p>MERCH PACK</p><small>~5 pts</small></div>
+    <div class="contenedor-scroll">
+      <div class="track-shop">
+        <div class="tarjeta-item"><span class="emoji-item">🎧</span><p class="nombre-item">AURICULARES</p><p class="costo-item">~10 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">🖱️</span><p class="nombre-item">MOUSE GAMER</p><p class="costo-item">~8 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">💳</span><p class="nombre-item">STEAM CARD</p><p class="costo-item">~6 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">🤖</span><p class="nombre-item">AI CREDITS</p><p class="costo-item">~2 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">⌨️</span><p class="nombre-item">TECLADO</p><p class="costo-item">~12 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">☕</span><p class="nombre-item">CAFE+SNACKS</p><p class="costo-item">~1 pt</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">🎮</span><p class="nombre-item">MINECRAFT</p><p class="costo-item">~7 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">📦</span><p class="nombre-item">MERCH PACK</p><p class="costo-item">~5 pts</p></div>
+        <!-- copie las mismas tarjetas para que el loop funcione -->
+        <div class="tarjeta-item"><span class="emoji-item">🎧</span><p class="nombre-item">AURICULARES</p><p class="costo-item">~10 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">🖱️</span><p class="nombre-item">MOUSE GAMER</p><p class="costo-item">~8 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">💳</span><p class="nombre-item">STEAM CARD</p><p class="costo-item">~6 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">🤖</span><p class="nombre-item">AI CREDITS</p><p class="costo-item">~2 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">⌨️</span><p class="nombre-item">TECLADO</p><p class="costo-item">~12 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">☕</span><p class="nombre-item">CAFE+SNACKS</p><p class="costo-item">~1 pt</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">🎮</span><p class="nombre-item">MINECRAFT</p><p class="costo-item">~7 pts</p></div>
+        <div class="tarjeta-item"><span class="emoji-item">📦</span><p class="nombre-item">MERCH PACK</p><p class="costo-item">~5 pts</p></div>
       </div>
     </div>
-    <div class="shop-btn"><button>► BROWSE THE FULL SHOP</button></div>
+    <div class="boton-shop-wrap">
+      <button>► VER TODA LA TIENDA</button>
+    </div>
   </div>
 
-  <div class="faq">
-    <h2>FAQ</h2>
-    <div class="faq-item">
-      <button onclick="toggleFaq(this)">¿Necesito experiencia? <span>+</span></button>
-      <p>No! Cualquiera puede participar. Scratch, pygame, lo que sea.</p>
+  <div class="que-es">
+    <div>
+      <h2>¿Que es un fan game?</h2>
+      <p>Un fan game es un juego hecho por fans de otro juego.<br><br>No necesitas saber mucho. Si puedes imaginarlo puedes hacerlo!!</p>
     </div>
-    <div class="faq-item">
-      <button onclick="toggleFaq(this)">¿Que juego puedo elegir? <span>+</span></button>
+    <div class="img-undertale">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391540/header.jpg?t=1757349115" alt="undertale" />
+      <small>★ undertale - el mas popular</small>
+    </div>
+  </div>
+
+  <div class="preguntas">
+    <h2>FAQ</h2>
+    <div class="pregunta-item">
+      <button onclick="abrir(this)">¿Necesito experiencia? <span>+</span></button>
+      <p>No!! Cualquiera puede. Scratch, pygame, lo que sea vale.</p>
+    </div>
+    <div class="pregunta-item">
+      <button onclick="abrir(this)">¿Que juego puedo elegir? <span>+</span></button>
       <p>Cualquiera: Undertale, Deltarune, Sonic, Celeste, Minecraft...</p>
     </div>
-    <div class="faq-item">
-      <button onclick="toggleFaq(this)">¿Como se entregan los premios? <span>+</span></button>
-      <p>PayPal o transferencia. Merch por correo.</p>
+    <div class="pregunta-item">
+      <button onclick="abrir(this)">¿Como se entregan los premios? <span>+</span></button>
+      <p>PayPal o transferencia. El merch llega por correo.</p>
     </div>
-    <div class="faq-item">
-      <button onclick="toggleFaq(this)">¿Puedo trabajar en equipo? <span>+</span></button>
-      <p>Si! Hasta 3 personas por equipo.</p>
+    <div class="pregunta-item">
+      <button onclick="abrir(this)">¿Puedo ir en equipo? <span>+</span></button>
+      <p>Si!! Maximo 3 personas por equipo.</p>
     </div>
-    <div class="faq-item">
-      <button onclick="toggleFaq(this)">¿Cuando es el deadline? <span>+</span></button>
+    <div class="pregunta-item">
+      <button onclick="abrir(this)">¿Cuando es el deadline? <span>+</span></button>
       <p>El ultimo dia del mes antes de medianoche.</p>
     </div>
   </div>
 
-  <div class="stats">
+  <div class="numeritos">
     <h2>EN NUMEROS</h2>
-    <div class="stats-grid">
-      <div class="stat"><p>48</p><p>FAN GAMES</p></div>
-      <div class="stat"><p>120</p><p>PARTICIPANTES</p></div>
-      <div class="stat"><p>$210</p><p>EN PREMIOS</p></div>
-      <div class="stat"><p>15</p><p>JUEGOS</p></div>
+    <div class="grid-nums">
+      <div class="num-card"><p class="numero-grande">48</p><p class="etiqueta">FAN GAMES</p></div>
+      <div class="num-card"><p class="numero-grande">120</p><p class="etiqueta">PARTICIPANTES</p></div>
+      <div class="num-card"><p class="numero-grande">$210</p><p class="etiqueta">EN PREMIOS</p></div>
+      <div class="num-card"><p class="numero-grande">15</p><p class="etiqueta">JUEGOS</p></div>
     </div>
   </div>
 
-</div>
+  <script>
+    function abrir(btn) {
+      var respuesta = btn.nextElementSibling
+      var estaAbierto = respuesta.classList.contains('abierto')
+      document.querySelectorAll('.pregunta-item p').forEach(function(p) {
+        p.classList.remove('abierto')
+      })
+      document.querySelectorAll('.pregunta-item button span').forEach(function(s) {
+        s.textContent = '+'
+      })
+      if (!estaAbierto) {
+        respuesta.classList.add('abierto')
+        btn.querySelector('span').textContent = '-'
+      }
+    }
+  </script>
 
-<script>
-function toggleFaq(btn) {
-  const p = btn.nextElementSibling;
-  const isOpen = p.classList.contains('open');
-  document.querySelectorAll('.faq-item p').forEach(x => x.classList.remove('open'));
-  document.querySelectorAll('.faq-item button span').forEach(x => x.textContent = '+');
-  if (!isOpen) { p.classList.add('open'); btn.querySelector('span').textContent = '-'; }
-}
-</script>
+</body>
+</html>
