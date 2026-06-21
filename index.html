@@ -1,10 +1,220 @@
-<!DOCTYPE html>
-<html><head>
-  <title>My Page</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head><body>
-  <p class="text-gray-700 text-lg">Hello world!</p>
-  <h3 class="text-blue-500">soy friskdev</h3>
-  <p class="font-bold">me gusta undertale</p>
-  <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391540/header.jpg?t=1757349115h" alt="undertale game logg" />
-</body></html>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body, .page {
+  font-family: 'Press Start 2P', monospace;
+  background: #0d0d1a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 4px solid yellow;
+}
+.hero h1 {
+  font-size: 24px;
+  color: yellow;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 9px;
+  color: #aaa;
+  margin-bottom: 20px;
+  line-height: 2;
+}
+.hero button {
+  background: yellow;
+  color: black;
+  border: none;
+  padding: 12px 20px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #888;
+}
+.hero button:active { box-shadow: none; transform: translate(4px,4px); }
+
+/* STEPS */
+.steps { padding: 30px 20px; }
+.steps h2 { color: yellow; font-size: 12px; text-align: center; margin-bottom: 20px; }
+.steps-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.step {
+  border: 3px solid cyan;
+  padding: 15px;
+  text-align: center;
+}
+.step p:first-child { color: #ff6b9d; font-size: 8px; margin-bottom: 8px; }
+.step p:nth-child(2) { font-size: 9px; margin-bottom: 8px; }
+.step p:last-child { font-size: 7px; color: #aaa; line-height: 2; }
+
+/* SHOP */
+.shop { padding: 30px 0; border-top: 4px solid yellow; }
+.shop h2 { color: yellow; font-size: 12px; text-align: center; margin-bottom: 20px; }
+.shop-track-wrap { overflow: hidden; }
+.shop-track {
+  display: flex;
+  gap: 10px;
+  animation: scroll 20s linear infinite;
+  width: max-content;
+}
+.shop-track:hover { animation-play-state: paused; }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.item {
+  border: 3px solid yellow;
+  padding: 15px 10px;
+  text-align: center;
+  width: 130px;
+  flex-shrink: 0;
+}
+.item span { font-size: 30px; display: block; margin-bottom: 8px; }
+.item p { font-size: 7px; line-height: 2; }
+.item small { font-size: 7px; color: cyan; }
+.shop-btn { text-align: center; margin-top: 20px; }
+.shop-btn button {
+  background: yellow;
+  color: black;
+  border: none;
+  padding: 12px 20px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #888;
+}
+
+/* FAQ */
+.faq { padding: 30px 20px; border-top: 4px solid yellow; }
+.faq h2 { color: yellow; font-size: 12px; margin-bottom: 20px; text-align: center; }
+.faq-item { border-bottom: 2px solid #333; }
+.faq-item button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  padding: 14px 0;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.8;
+}
+.faq-item button:hover { color: yellow; }
+.faq-item p { font-size: 7px; color: #aaa; line-height: 2; max-height: 0; overflow: hidden; transition: max-height 0.3s, padding 0.3s; }
+.faq-item p.open { max-height: 150px; padding-bottom: 14px; }
+
+/* STATS */
+.stats { padding: 30px 20px; background: #111128; border-top: 4px solid yellow; }
+.stats h2 { color: yellow; font-size: 12px; text-align: center; margin-bottom: 20px; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+.stat { border: 3px solid yellow; padding: 20px 10px; text-align: center; }
+.stat p:first-child { font-size: 24px; color: yellow; margin-bottom: 8px; }
+.stat p:last-child { font-size: 7px; color: #aaa; line-height: 2; }
+</style>
+
+<div class="page">
+
+  <div class="hero">
+    <h1>FanGame Hub</h1>
+    <p>Haz un fan game de tu juego favorito<br>y gana premios reales!</p>
+    <button>► SUBMIT!</button>
+  </div>
+
+  <div class="steps">
+    <h2>COMO FUNCIONA</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <p>PASO 1</p>
+        <p>Elige tu juego</p>
+        <p>Escoge el juego que te inspira</p>
+      </div>
+      <div class="step">
+        <p>PASO 2</p>
+        <p>Sube tu proyecto</p>
+        <p>Manda el link de tu fan game</p>
+      </div>
+      <div class="step">
+        <p>PASO 3</p>
+        <p>Gana premios</p>
+        <p>Los mejores ganan recompensas</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="shop">
+    <h2>THE SHOP</h2>
+    <div class="shop-track-wrap">
+      <div class="shop-track">
+        <div class="item"><span>🎧</span><p>AURICULARES</p><small>~10 pts</small></div>
+        <div class="item"><span>🖱️</span><p>MOUSE GAMER</p><small>~8 pts</small></div>
+        <div class="item"><span>💳</span><p>STEAM CARD</p><small>~6 pts</small></div>
+        <div class="item"><span>🤖</span><p>AI CREDITS</p><small>~2 pts</small></div>
+        <div class="item"><span>⌨️</span><p>TECLADO</p><small>~12 pts</small></div>
+        <div class="item"><span>☕</span><p>CAFE+SNACKS</p><small>~1 pt</small></div>
+        <div class="item"><span>🎮</span><p>MINECRAFT</p><small>~7 pts</small></div>
+        <div class="item"><span>📦</span><p>MERCH PACK</p><small>~5 pts</small></div>
+        <!-- duplicado -->
+        <div class="item"><span>🎧</span><p>AURICULARES</p><small>~10 pts</small></div>
+        <div class="item"><span>🖱️</span><p>MOUSE GAMER</p><small>~8 pts</small></div>
+        <div class="item"><span>💳</span><p>STEAM CARD</p><small>~6 pts</small></div>
+        <div class="item"><span>🤖</span><p>AI CREDITS</p><small>~2 pts</small></div>
+        <div class="item"><span>⌨️</span><p>TECLADO</p><small>~12 pts</small></div>
+        <div class="item"><span>☕</span><p>CAFE+SNACKS</p><small>~1 pt</small></div>
+        <div class="item"><span>🎮</span><p>MINECRAFT</p><small>~7 pts</small></div>
+        <div class="item"><span>📦</span><p>MERCH PACK</p><small>~5 pts</small></div>
+      </div>
+    </div>
+    <div class="shop-btn"><button>► BROWSE THE FULL SHOP</button></div>
+  </div>
+
+  <div class="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <button onclick="toggleFaq(this)">¿Necesito experiencia? <span>+</span></button>
+      <p>No! Cualquiera puede participar. Scratch, pygame, lo que sea.</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFaq(this)">¿Que juego puedo elegir? <span>+</span></button>
+      <p>Cualquiera: Undertale, Deltarune, Sonic, Celeste, Minecraft...</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFaq(this)">¿Como se entregan los premios? <span>+</span></button>
+      <p>PayPal o transferencia. Merch por correo.</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFaq(this)">¿Puedo trabajar en equipo? <span>+</span></button>
+      <p>Si! Hasta 3 personas por equipo.</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFaq(this)">¿Cuando es el deadline? <span>+</span></button>
+      <p>El ultimo dia del mes antes de medianoche.</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <h2>EN NUMEROS</h2>
+    <div class="stats-grid">
+      <div class="stat"><p>48</p><p>FAN GAMES</p></div>
+      <div class="stat"><p>120</p><p>PARTICIPANTES</p></div>
+      <div class="stat"><p>$210</p><p>EN PREMIOS</p></div>
+      <div class="stat"><p>15</p><p>JUEGOS</p></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggleFaq(btn) {
+  const p = btn.nextElementSibling;
+  const isOpen = p.classList.contains('open');
+  document.querySelectorAll('.faq-item p').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.faq-item button span').forEach(x => x.textContent = '+');
+  if (!isOpen) { p.classList.add('open'); btn.querySelector('span').textContent = '-'; }
+}
+</script>
