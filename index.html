@@ -16,7 +16,6 @@
       overflow-x: hidden;
     }
 
-    /* parte de arriba con el titulo */
     .encabezado {
       text-align: center;
       padding: 38px 20px 35px 20px;
@@ -85,6 +84,7 @@
       padding: 13px 10px;
       text-align: center;
       background: #111128;
+      min-height: auto;
     }
 
     .cajita-paso .numero { color: #ff6b9d; font-size: 7px; margin-bottom: 7px; }
@@ -158,8 +158,14 @@
     .que-es h2 { color: #ff6b9d; font-size: 10px; margin-bottom: 13px; line-height: 1.7; }
     .que-es p { font-size: 7px; color: #bbb; line-height: 2.3; }
 
+    /* arreglar imagen undertale */
     .img-undertale { border: 3px solid cyan; overflow: hidden; }
-    .img-undertale img { width: 100%; display: block; }
+    .img-undertale img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
     .img-undertale small { display: block; padding: 6px 9px; font-size: 6px; color: cyan; background: #111128; }
 
     .preguntas { padding: 27px 20px; border-top: 3px solid yellow; }
@@ -283,7 +289,7 @@
       <p>Un fan game es un juego hecho por fans de otro juego.<br><br>No necesitas saber mucho. Si puedes imaginarlo puedes hacerlo!!</p>
     </div>
     <div class="img-undertale">
-      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391540/header.jpg?t=1757349115" alt="undertale" />
+      <img src="https://m.gjcdn.net/game-thumbnail/500/136925-ee65ajxb-v4.webp" alt="undertale fan game" />
       <small>★ undertale - el mas popular</small>
     </div>
   </div>
